@@ -18,6 +18,7 @@ namespace Diga.WebView.Examples
             InitializeComponent();
         }
 
+        public WebView2.WinForms.WebView WebView2 => this.WebView;
         private void bnBack_Click(object sender, EventArgs e)
         {
             this.WebView.GoBack();

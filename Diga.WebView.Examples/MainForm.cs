@@ -26,5 +26,34 @@ namespace Diga.WebView.Examples
             tab.Controls.Add(p);
             this.tabControl1.SelectedTab = tab;
         }
+
+        private void devToolsToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            if (this.tabControl1.SelectedTab == null) return;
+            if (this.tabControl1.SelectedTab.Controls.Count <= 0) return;
+
+            BrowserPage br =  this.tabControl1.SelectedTab.Controls[0] as BrowserPage;
+            if (br != null)
+            {
+                br.WebView2.OpenDevToolsWindow();
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void processesToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            if (this.tabControl1.SelectedTab == null) return;
+            if (this.tabControl1.SelectedTab.Controls.Count <= 0) return;
+
+            BrowserPage br =  this.tabControl1.SelectedTab.Controls[0] as BrowserPage;
+            if (br != null)
+            {
+                br.WebView2.OpenTaskManagerWindow();
+            }
+        }
     }
 }
