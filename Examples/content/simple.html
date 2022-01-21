@@ -1,6 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="codemirror-5.65.0/lib/codemirror.css" />
     <link rel="stylesheet" href="codemirror-5.65.0/addon/hint/show-hint.css" />
     <script src="codemirror-5.65.0/lib/codemirror.js"></script>
@@ -46,17 +47,56 @@
           />
         </svg>
       </button>
-
       <div style="height: 100%" id="code" name="code"></div>
     </div>
 
     <script>
+
+      function utf8_to_b64( str ) {
+        return window.btoa(unescape(encodeURIComponent( str )));
+      }
+      function b64_to_utf8( str ) {
+        return decodeURIComponent(escape(window.atob( str )));
+      }
+
       var editor = CodeMirror(document.getElementById("code"), {
         mode: "text/html",
         extraKeys: { "Ctrl-Space": "autocomplete" },
         lineNumbers: true,
         value: document.documentElement.innerHTML,
       });
+
+      function GetCode()
+      {
+        return editor.getValue();
+      }
+
+      function ParseString(str,type)
+      {
+        
+        return val;
+      }
+      function TestSetCode()
+      {
+        let v = encodeURI( "&lt;script&gt;&lt;/script&gt;");
+        
+        SetCode(v);
+      }
+      function SetCode(value)
+      {
+        
+        let str = b64_to_utf8(value);
+        try
+        {
+          
+          editor.setValue(str);
+        }catch(ex)
+        {
+          alert("Error in SetCode:" + ex);
+        }
+
+        
+      }
     </script>
   </body>
 </html>
