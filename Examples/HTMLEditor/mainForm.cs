@@ -52,15 +52,15 @@ namespace HTMLEditor
         private async void webViewCode_NavigationCompleted(object sender, Diga.WebView2.Wrapper.EventArguments.NavigationCompletedEventArgs e)
         {
             DOMDocument doc = this.webViewCode.GetDOMDocument();
-            DOMElement button = await doc.getElementById("bnTest");
+            DOMElement button = await doc.getElementByIdAsync("bnTest");
             if (button == null)
             {
-                await this.webViewCode.GetDOMWindow().alert("Could not find bnTest");
+                await this.webViewCode.GetDOMWindow().alertAsync("Could not find bnTest");
                 return;
             }
 
-            DOMEventListenerScript script = new DOMEventListenerScript(button);
-            await button.addEventListener("click", script, false);
+            DOMEventListenerScript script = new DOMEventListenerScript(button,"click");
+            await button.addEventListenerAsync("click",script,false);
             button.DomEvent += async (_,ev) =>
             {
                 if (ev.EventName == "click")
@@ -107,7 +107,7 @@ namespace HTMLEditor
                     catch (ScriptException exception)
                     {
                         
-                        await this.webViewCode.GetDOMWindow().alert(exception.ErrorObject.ToString());
+                        await this.webViewCode.GetDOMWindow().alertAsync(exception.ErrorObject.ToString());
                     }
                     
 
