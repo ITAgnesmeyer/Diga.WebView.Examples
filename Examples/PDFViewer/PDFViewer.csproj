@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Diga.WebView2.WinForms" Version="15.0.3" />
-    <PackageReference Include="Diga.WebView2.Wrapper" Version="15.0.3" />
+    <PackageReference Include="Diga.WebView2.WinForms" Version="16.0.1" />
+    <PackageReference Include="Diga.WebView2.Wrapper" Version="16.0.2" />
   </ItemGroup>
 
 </Project>

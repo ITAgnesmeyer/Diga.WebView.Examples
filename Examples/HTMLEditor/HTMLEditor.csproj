@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="diga.webview2.winforms" Version="15.0.3" />
-    <PackageReference Include="Diga.WebView2.Wrapper" Version="15.0.3" />
+    <PackageReference Include="diga.webview2.winforms" Version="16.0.1" />
+    <PackageReference Include="Diga.WebView2.Wrapper" Version="16.0.2" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
