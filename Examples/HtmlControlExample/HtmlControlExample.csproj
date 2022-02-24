@@ -12,9 +12,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Diga.Core.Threading" Version="1.0.3" />
-    <PackageReference Include="diga.webview2.winforms" Version="16.0.1" />
-    <PackageReference Include="Diga.WebView2.Wrapper" Version="16.0.2" />
+    <PackageReference Include="Diga.Core.Threading" Version="1.0.5" />
+    <PackageReference Include="diga.webview2.winforms" Version="16.0.2" />
+    <PackageReference Include="Diga.WebView2.Wrapper" Version="16.0.3" />
   </ItemGroup>
 
 </Project>

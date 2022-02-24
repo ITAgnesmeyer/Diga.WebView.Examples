@@ -11,8 +11,8 @@
     <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Diga.WebView2.WinForms" Version="16.0.1" />
-    <PackageReference Include="Diga.WebView2.Wrapper" Version="16.0.2" />
+    <PackageReference Include="Diga.WebView2.WinForms" Version="16.0.2" />
+    <PackageReference Include="Diga.WebView2.Wrapper" Version="16.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">

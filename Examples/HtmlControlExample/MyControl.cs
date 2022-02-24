@@ -32,16 +32,16 @@ public class MyControl
     {
         
         if (!element.VarExist()) return "";
-        string var = element.GetVarName();
-        string result = this._WebView.ExecuteScriptSync($"return {var}.value;");
+        string result = element.GetElementProperty<string>("value");
+        
         return result;
     }
 
     private bool GetElementChecked(DOMElement element)
     {
         if (!element.VarExist()) return false;
-        string var = element.GetVarName();
-        string result = this._WebView.ExecuteScriptSync($"return {var}.checked;");
+        bool result = element.GetElementProperty<bool>("checked");
+        //string result = this._WebView.ExecuteScriptSync($"return {var}.checked;");
         return Convert.ToBoolean( result);
     }
     public string GetPassword()
@@ -65,6 +65,16 @@ public class MyControl
     }
     private void BuildPage()
     {
+        DOMElement link = this._Document.createElement("link");
+        //<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        
+        link.setAttribute("href","https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css");
+        link.setAttribute("rel","stylesheet");
+        link.setAttribute("integrity","sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3");
+        link.setAttribute("crossorigin","anonymous");
+
+        this._Document.head.appendChild(link);
+
         this._Div = this._Document.createElement("div");
         this._Div.style.margin = "10px 10px 10px 10px";
         //this._Div.setAttribute("style","margin:10px 10px 10px 10px;");

@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using Diga.WebView2.WinForms.Scripting;
 using Diga.WebView2.WinForms.Scripting.DOM;
+using Diga.WebView2.Wrapper;
 
 namespace HTMLEditor
 {
@@ -31,7 +34,7 @@ namespace HTMLEditor
             }
         }
 
-        private string DocodeDOMString(string html)
+        private string DecodeDOMString(string html)
         {
             if (html.StartsWith("\""))
                 html = html.Substring(1);
@@ -66,7 +69,7 @@ namespace HTMLEditor
                 if (ev.EventName == "click")
                 {
                     string value =await this.webViewCode.ExecuteScriptAsync("return GetCode();");
-                    value = DocodeDOMString(value);
+                    value = DecodeDOMString(value);
                     if (!string.IsNullOrEmpty(value))
                     {
                         this.webViewPreView.NavigateToString(value);
@@ -115,11 +118,18 @@ namespace HTMLEditor
             }
         }
 
+        private string GetDocumentContent()
+        {
+            string value =this.webViewCode.ExecuteScriptSync("return GetCode();");
+            value = DecodeDOMString(value);
+            return value;
+
+        }
         private async void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
           
             string value =await this.webViewCode.ExecuteScriptAsync("return GetCode();");
-            value = DocodeDOMString(value);
+            value = DecodeDOMString(value);
             if (string.IsNullOrEmpty(value)) return;
             
 
@@ -140,6 +150,58 @@ namespace HTMLEditor
 
 
 
+        }
+
+        private void ShowContent(bool encoded = false)
+        {
+            string content = GetDocumentContent();
+            if (string.IsNullOrEmpty(content)) return;
+            if (encoded)
+            {
+                byte[] bytes = Encoding.UTF8.GetBytes(content);
+                string base64 = Convert.ToBase64String(bytes);
+                content = "data:text/html;charset=utf-8;base64," + base64; 
+
+            }
+            using (var f = new Form())
+            {
+                f.Text = "Content: Encoded=" + encoded.ToString();
+                f.Width = 800;
+                f.Height = 600;
+                f.StartPosition = FormStartPosition.CenterParent;
+                TextBox textBox = new TextBox();
+                textBox.Multiline = true;
+                textBox.ScrollBars = ScrollBars.Both;
+                
+                textBox.Font = new Font("Courier New", 12);
+                textBox.ForeColor = Color.DarkBlue;
+                textBox.Dock = DockStyle.Fill;
+                textBox.Text = content;
+                f.Controls.Add(textBox);
+
+                f.ShowDialog(this);
+            }
+        }
+
+        private void webViewPreView_PermissionRequested(object sender, Diga.WebView2.Wrapper.EventArguments.PermissionRequestedEventArgs e)
+        {
+            MessageBox.Show("Permission request");
+        }
+
+        private void encodedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowContent(true);
+        }
+
+        private void normalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowContent();
+        }
+
+        private void vSCodeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVSCode vsCode = new frmVSCode();
+            vsCode.Show();
         }
     }
 }

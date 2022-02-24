@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.webViewMain = new Diga.WebView2.WinForms.WebView();
             this.SuspendLayout();
             // 
@@ -43,7 +42,7 @@
             this.webViewMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webViewMain.EnableMonitoring = false;
             this.webViewMain.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.webViewMain.HtmlContent = resources.GetString("webViewMain.HtmlContent");
+            this.webViewMain.HtmlContent = "<html><head></head><body></body></html>";
             this.webViewMain.IsGeneralAutoFillEnabled = false;
             this.webViewMain.IsMuted = false;
             this.webViewMain.IsPasswordAutosaveEnabled = false;
@@ -61,7 +60,7 @@
             this.webViewMain.TabIndex = 0;
             this.webViewMain.Url = null;
             this.webViewMain.ZoomFactor = 0D;
-            this.webViewMain.DOMContentLoaded += new System.EventHandler<Diga.WebView2.Wrapper.EventArguments.DOMContentLoadedEventArgs>(this.webViewMain_DOMContentLoaded);
+            this.webViewMain.DocumentLoading += new System.EventHandler(this.webViewMain_DocumentLoading);
             // 
             // mainForm
             // 
