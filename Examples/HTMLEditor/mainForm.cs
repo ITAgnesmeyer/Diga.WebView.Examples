@@ -4,8 +4,9 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using Diga.WebView2.WinForms.Scripting;
-using Diga.WebView2.WinForms.Scripting.DOM;
+using Diga.WebView2.Scripting;
+using Diga.WebView2.Scripting.DOM;
+
 using Diga.WebView2.Wrapper;
 
 namespace HTMLEditor

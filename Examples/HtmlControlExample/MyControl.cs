@@ -1,6 +1,6 @@
 using System.Reflection;
 using Diga.WebView2.WinForms;
-using Diga.WebView2.WinForms.Scripting.DOM;
+using Diga.WebView2.Scripting.DOM;
 
 namespace HtmlControlExample;
 
