@@ -152,9 +152,36 @@ namespace HTMLEditor
 
         }
 
-        private void ShowContent(bool encoded = false)
+        private string testEncode(string input)
         {
-            string content = GetDocumentContent();
+            string inp = input.Replace("\u003C","\u005C\u0075\u0030\u0030\u0033\u0043" ,StringComparison.Ordinal);
+            inp = inp.Replace(Environment.NewLine,"\u005C\u006E");
+            inp = inp.Replace( "\"","\u005C\u0022");
+            inp = inp.Replace("\u003E", "\u005C\u0075\u0030\u0030\u0033\u0045");
+            return inp;
+        }
+        private string testDecode(string input)
+        {
+            string inp = input.Replace("\u005C\u0075\u0030\u0030\u0033\u0043", "\u003C",StringComparison.Ordinal);
+            inp = inp.Replace("\u005C\u006E", Environment.NewLine);
+            inp = inp.Replace("\u005C\u0022", "\"");
+            inp = inp.Replace("\u005C\u0027", "\'");
+            inp = inp.Substring(1, inp.Length - 2);
+            return inp;
+        }
+        private void ShowContent(bool encoded = false, bool direct = false)
+        {
+            string content = string.Empty;
+            if (direct)
+            {
+                content = this.webViewPreView.GetDOMDocument().documentElement.outerHTML;
+                content = testDecode(content);
+            }
+            else
+            {
+                content = GetDocumentContent();    
+            }
+            
             if (string.IsNullOrEmpty(content)) return;
             if (encoded)
             {
@@ -202,6 +229,33 @@ namespace HTMLEditor
         {
             frmVSCode vsCode = new frmVSCode();
             vsCode.Show();
+        }
+
+        private void directToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowContent(false,true);
+
+        }
+
+        private void decodeEncodeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string raw = this.webViewPreView.GetDOMDocument().documentElement.outerHTML;
+            string dec = testDecode(raw);
+            
+            try
+            {
+                this.webViewPreView.GetDOMDocument().documentElement.outerHTML = dec;
+            }
+            catch (ScriptException exception)
+            {
+                MessageBox.Show(this, exception.ErrorObject.ToString());
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(this, exception.Message);
+            }
+            
+
         }
     }
 }

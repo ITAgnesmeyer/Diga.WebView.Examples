@@ -44,13 +44,15 @@
             this.showContentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encodedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.directToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vSCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pasteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vSCodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.decodeEncodeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -207,7 +209,8 @@
             // contentToolStripMenuItem
             // 
             this.contentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showContentToolStripMenuItem});
+            this.showContentToolStripMenuItem,
+            this.decodeEncodeTestToolStripMenuItem});
             this.contentToolStripMenuItem.Name = "contentToolStripMenuItem";
             this.contentToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.contentToolStripMenuItem.Text = "Content";
@@ -216,7 +219,8 @@
             // 
             this.showContentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.encodedToolStripMenuItem,
-            this.normalToolStripMenuItem});
+            this.normalToolStripMenuItem,
+            this.directToolStripMenuItem});
             this.showContentToolStripMenuItem.Name = "showContentToolStripMenuItem";
             this.showContentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showContentToolStripMenuItem.Text = "ShowContent";
@@ -234,6 +238,28 @@
             this.normalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.normalToolStripMenuItem.Text = "Normal";
             this.normalToolStripMenuItem.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
+            // 
+            // directToolStripMenuItem
+            // 
+            this.directToolStripMenuItem.Name = "directToolStripMenuItem";
+            this.directToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.directToolStripMenuItem.Text = "Direct";
+            this.directToolStripMenuItem.Click += new System.EventHandler(this.directToolStripMenuItem_Click);
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.vSCodeToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // vSCodeToolStripMenuItem
+            // 
+            this.vSCodeToolStripMenuItem.Name = "vSCodeToolStripMenuItem";
+            this.vSCodeToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.vSCodeToolStripMenuItem.Text = "VS-Code";
+            this.vSCodeToolStripMenuItem.Click += new System.EventHandler(this.vSCodeToolStripMenuItem_Click);
             // 
             // contextMenuStrip1
             // 
@@ -270,20 +296,12 @@
             this.panel2.Size = new System.Drawing.Size(877, 18);
             this.panel2.TabIndex = 3;
             // 
-            // toolsToolStripMenuItem
+            // decodeEncodeTestToolStripMenuItem
             // 
-            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.vSCodeToolStripMenuItem});
-            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.toolsToolStripMenuItem.Text = "Tools";
-            // 
-            // vSCodeToolStripMenuItem
-            // 
-            this.vSCodeToolStripMenuItem.Name = "vSCodeToolStripMenuItem";
-            this.vSCodeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.vSCodeToolStripMenuItem.Text = "VS-Code";
-            this.vSCodeToolStripMenuItem.Click += new System.EventHandler(this.vSCodeToolStripMenuItem_Click);
+            this.decodeEncodeTestToolStripMenuItem.Name = "decodeEncodeTestToolStripMenuItem";
+            this.decodeEncodeTestToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.decodeEncodeTestToolStripMenuItem.Text = "DecodeEncode-Test";
+            this.decodeEncodeTestToolStripMenuItem.Click += new System.EventHandler(this.decodeEncodeTestToolStripMenuItem_Click);
             // 
             // mainForm
             // 
@@ -334,5 +352,7 @@
         private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vSCodeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem directToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem decodeEncodeTestToolStripMenuItem;
     }
 }

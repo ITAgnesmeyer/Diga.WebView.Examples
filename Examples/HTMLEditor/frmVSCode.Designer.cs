@@ -67,7 +67,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.webView1);
             this.Name = "frmVSCode";
-            this.Text = "frmVSCode";
+            this.Text = "Visual Stuido Code";
             this.ResumeLayout(false);
 
         }
