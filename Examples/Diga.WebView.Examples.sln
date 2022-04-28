@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HTMLEditor", "HTMLEditor\HT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PDFViewer", "PDFViewer\PDFViewer.csproj", "{84B24C43-CE26-4F09-BF14-06C6E9658DF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlControlExample", "HtmlControlExample\HtmlControlExample.csproj", "{20DC2B2C-7729-42AD-8A1A-24DC92102376}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlControlExample", "HtmlControlExample\HtmlControlExample.csproj", "{20DC2B2C-7729-42AD-8A1A-24DC92102376}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SVGViewer", "SVGViewer\SVGViewer.csproj", "{E243B96E-1897-4A5C-A40E-DD7B30C948CD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{20DC2B2C-7729-42AD-8A1A-24DC92102376}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20DC2B2C-7729-42AD-8A1A-24DC92102376}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20DC2B2C-7729-42AD-8A1A-24DC92102376}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E243B96E-1897-4A5C-A40E-DD7B30C948CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E243B96E-1897-4A5C-A40E-DD7B30C948CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E243B96E-1897-4A5C-A40E-DD7B30C948CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E243B96E-1897-4A5C-A40E-DD7B30C948CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{D60C082B-911A-4BEF-91EE-E3EEF6F9644F} = {8F95D136-24EC-4366-B790-BE9D16E37F9E}
 		{84B24C43-CE26-4F09-BF14-06C6E9658DF3} = {8F95D136-24EC-4366-B790-BE9D16E37F9E}
 		{20DC2B2C-7729-42AD-8A1A-24DC92102376} = {8F95D136-24EC-4366-B790-BE9D16E37F9E}
+		{E243B96E-1897-4A5C-A40E-DD7B30C948CD} = {8F95D136-24EC-4366-B790-BE9D16E37F9E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EF77A6A4-3979-438E-B4AD-347C002131AB}

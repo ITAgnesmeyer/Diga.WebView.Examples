@@ -10,7 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Diga.WebView2.Scripting" Version="1.17.1" />
     <PackageReference Include="Diga.WebView2.WinForms" Version="17.0.1" />
-    <PackageReference Include="Diga.WebView2.Wrapper" Version="17.0.1" />
+    <PackageReference Include="Diga.WebView2.Wrapper" Version="18.0.1" />
   </ItemGroup>
 
 </Project>
