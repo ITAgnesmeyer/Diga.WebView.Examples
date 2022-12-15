@@ -32,5 +32,18 @@ namespace HtmlControlExample
         {
             DocumentLoading();
         }
+
+        private void tESTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(this, "hallo Welt", "TEST");
+        }
+
+        private void webViewMain_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                this.contextMenuStrip1.Show(this.webViewMain,e.Location);
+            }
+        }
     }
 }

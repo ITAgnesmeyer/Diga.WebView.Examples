@@ -2,15 +2,15 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net4.8;net5.0-windows</TargetFrameworks>
+    <TargetFrameworks>net4.8;net6.0-windows</TargetFrameworks>
     <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Diga.WebView2.Scripting" Version="1.17.1" />
-    <PackageReference Include="Diga.WebView2.WinForms" Version="17.0.1" />
-    <PackageReference Include="Diga.WebView2.Wrapper" Version="18.0.1" />
+    <PackageReference Include="Diga.WebView2.Scripting" Version="1.20.2" />
+    <PackageReference Include="Diga.WebView2.WinForms" Version="20.1.0" />
+    <PackageReference Include="Diga.WebView2.Wrapper" Version="20.1.0" />
   </ItemGroup>
 
 </Project>

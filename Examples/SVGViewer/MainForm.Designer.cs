@@ -41,19 +41,22 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.openFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.webView1 = new Diga.WebView2.WinForms.WebView();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.messageBoxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.bnBGColor = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -159,9 +162,10 @@
             // 
             this.webView1.AreBrowserAcceleratorKeysEnabled = true;
             this.webView1.BackColor = System.Drawing.Color.Black;
+            this.webView1.ContextMenuStrip = this.contextMenuStrip2;
             this.webView1.DefaultBackgroundColor = System.Drawing.Color.Gainsboro;
             this.webView1.DefaultContextMenusEnabled = false;
-            this.webView1.DefaultScriptDialogsEnabled = true;
+            this.webView1.DefaultScriptDialogsEnabled = false;
             this.webView1.DevToolsEnabled = true;
             this.webView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webView1.EnableMonitoring = false;
@@ -184,6 +188,19 @@
             this.webView1.Url = null;
             this.webView1.ZoomFactor = 0D;
             // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.messageBoxToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(141, 26);
+            // 
+            // messageBoxToolStripMenuItem
+            // 
+            this.messageBoxToolStripMenuItem.Name = "messageBoxToolStripMenuItem";
+            this.messageBoxToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+            this.messageBoxToolStripMenuItem.Text = "MessageBox";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.trackBar1);
@@ -193,6 +210,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 29);
             this.panel1.TabIndex = 3;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.AutoSize = false;
+            this.trackBar1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.trackBar1.Location = new System.Drawing.Point(136, 0);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.trackBar1.Maximum = 500;
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(113, 29);
+            this.trackBar1.TabIndex = 10;
+            this.trackBar1.Value = 100;
+            this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
             // 
             // bnBGColor
             // 
@@ -216,20 +247,6 @@
             this.panel2.Size = new System.Drawing.Size(800, 375);
             this.panel2.TabIndex = 4;
             // 
-            // trackBar1
-            // 
-            this.trackBar1.AutoSize = false;
-            this.trackBar1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.trackBar1.Location = new System.Drawing.Point(136, 0);
-            this.trackBar1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.trackBar1.Maximum = 500;
-            this.trackBar1.Minimum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(113, 29);
-            this.trackBar1.TabIndex = 10;
-            this.trackBar1.Value = 100;
-            this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -249,9 +266,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +293,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button bnBGColor;
         private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem messageBoxToolStripMenuItem;
     }
 }

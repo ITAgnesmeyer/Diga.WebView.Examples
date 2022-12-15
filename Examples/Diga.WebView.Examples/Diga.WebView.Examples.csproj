@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net6.0-windows;net5.0-windows;net472</TargetFrameworks>
+    <TargetFrameworks>net6.0-windows;net7.0-windows;net472</TargetFrameworks>
     <Nullable>disable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>disable</ImplicitUsings>
@@ -11,9 +11,9 @@
     <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Diga.WebView2.Scripting" Version="1.17.1" />
-    <PackageReference Include="Diga.WebView2.WinForms" Version="17.0.1" />
-    <PackageReference Include="Diga.WebView2.Wrapper" Version="18.0.1" />
+    <PackageReference Include="Diga.WebView2.Scripting" Version="1.20.2" />
+    <PackageReference Include="Diga.WebView2.WinForms" Version="20.1.0" />
+    <PackageReference Include="Diga.WebView2.Wrapper" Version="20.1.0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
