@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="diga.webview2.winforms" Version="20.1.0" />
-    <PackageReference Include="Diga.WebView2.Wrapper" Version="20.1.0" />
+    <PackageReference Include="diga.webview2.winforms" Version="20.1.3" />
+    <PackageReference Include="Diga.WebView2.Wrapper" Version="20.1.8" />
   </ItemGroup>
 
 </Project>
